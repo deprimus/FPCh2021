@@ -15,6 +15,7 @@
 -a="C:\Users\Andrei\University Buddy V2\Library\PlayerScriptAssemblies\Unity.2D.Common.Runtime.dll"
 -a="C:\Users\Andrei\University Buddy V2\Library\PlayerScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll"
 -a="C:\Users\Andrei\University Buddy V2\Library\PlayerScriptAssemblies\Unity.VisualScripting.State.dll"
+-a="C:\Users\Andrei\University Buddy V2\Library\PlayerScriptAssemblies\IngameDebugConsole.Runtime.dll"
 -a="C:\Users\Andrei\University Buddy V2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
 -a="C:\Users\Andrei\University Buddy V2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable\Newtonsoft.Json.dll"
 -a="C:\Users\Andrei\University Buddy V2\Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll"

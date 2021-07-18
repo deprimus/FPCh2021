@@ -358,6 +358,7 @@ MonoBehaviour:
   facultyText: {fileID: 2066594949}
   classRoomDropdown: {fileID: 1918550219}
   classroomText: {fileID: 347988433}
+  admin: 0
 --- !u!1 &295527014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1622008629}
+  obj: {fileID: 0}
 --- !u!114 &719670294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,6 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  obj: {fileID: 0}
 --- !u!1 &1627063659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,6 +2932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1622008629}
+  obj: {fileID: 0}
 --- !u!114 &1668044493
 MonoBehaviour:
   m_ObjectHideFlags: 0

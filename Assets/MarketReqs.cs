@@ -46,7 +46,7 @@ public class MarketReqs : MonoBehaviour
                 MarketItem day = new MarketItem();
                     day.title = obj.Entries["title"].AsString();
                 day.content = obj.Entries["content"].AsString();
-                day.date = obj.Entries["created_on"].AsString();
+                day.date = obj.Entries["created_on"].AsString().Split('T')[0];
                 day.authorName = obj.Entries["author"].AsObject().Entries["name"].AsString();
 
                 marketItems.Add(day);

@@ -87,6 +87,26 @@ public class TimetableReq : MonoBehaviour
         StartCoroutine(TimetableCoroutine());
     }
 
+    void GenerateDays()
+    {
+        string[] days = new string[] { "monday", "tuesday", "wednesday", "thursday", "friday" };
+
+        for (int i = 0; i < days.Length; i++)
+        {
+            try
+            {
+                GameObject dayClone = Instantiate(dayPrefab);
+                dayClone.transform.parent = dayParent.transform;
+
+                dayClone.GetComponent<Text>().text = days[i];
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.ToString());
+            }
+        }
+    }
+
     IEnumerator TimetableCoroutine()
     {
         UnityWebRequest www = UnityWebRequest.Get("https://fpch.deprimus.men/api/v1/timetable/" + AdminSession.facultyId + "/" + classRoomIds[classRoomText.text]);
@@ -94,6 +114,8 @@ public class TimetableReq : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
+            GenerateDays();
+
             Debug.Log(www.error);
         }
         else
@@ -104,9 +126,20 @@ public class TimetableReq : MonoBehaviour
 
             string[] days = new string[] { "monday", "tuesday", "wednesday", "thursday", "friday" };
 
-            Json json = Json.Parse(text);
+            Json timetable;
 
-            Json timetable = Json.Parse(json.Entries["data"].AsObject().Entries["data"].AsString().Replace("\\", ""));
+            try
+            {
+                Json json = Json.Parse(text);
+
+                timetable = Json.Parse(json.Entries["data"].AsObject().Entries["data"].AsString().Replace("\\", ""));
+            }
+            catch
+            {
+                GenerateDays();
+
+                throw new Exception("rip");
+            }
 
             for(int i=0;i<days.Length;i++)
             {

@@ -40,6 +40,8 @@ public class CardSwipe : MonoBehaviour
             child.GetChild(0).GetComponent<Text>().text = days[index + i - 1].name;
 
             child.GetChild(1).GetComponent<Text>().text = days[index + i - 1].start+":00";
+
+            child.GetChild(3).localEulerAngles = new Vector3(0, 0, 90 - 30 * (int)days[index + i - 1].start);
         }
     }
 

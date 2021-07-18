@@ -68,9 +68,24 @@ public class UIButtons : MonoBehaviour
         }
     }
 
+    [SerializeField] GameObject obj;
+    public void ActivateObj()
+    {
+        if (transform.name.Contains("Image (1)"))
+            obj.transform.GetChild(0).GetComponent<Text>().text = "Thank you for answering.";
+
+        obj.SetActive(true);
+        transform.parent.gameObject.SetActive(false);
+    }
+
     public void SaveTimetable()
     {
         StartCoroutine(SaveCoroutine());
+    }
+
+    public void DestroyParent()
+    {
+        Destroy(transform.parent.gameObject);
     }
 
     IEnumerator SaveCoroutine()

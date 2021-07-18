@@ -48,6 +48,7 @@ public class FacultyReqs : MonoBehaviour
         }
         catch
         {
+            PlayerPrefs.DeleteAll();
             StartCoroutine(FacultyCoroutine());
         } 
     }
